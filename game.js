@@ -19,7 +19,7 @@ function nextSequence() {
     userClickedPattern.push(userChosenColor);
     console.log(userClickedPattern)
     playSound(userChosenColor);
-    nextSequence();
+    animatePress(userChosenColor);
   })
 
 function playSound(colorName) {
@@ -27,4 +27,7 @@ function playSound(colorName) {
   audio.play();
 }
 
+function animatePress(currentColor) {
+  $("#" + currentColor).addClass("pressed").delay(100).removeClass("pressed")
+}
 
